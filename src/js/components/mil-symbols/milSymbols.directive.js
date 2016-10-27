@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('ngMilSymbols')
+    angular.module('ngMilitarySymbology')
         .directive('milSymbol', milSymbol);
 
     function milSymbol() {

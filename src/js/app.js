@@ -1,6 +1,6 @@
 (function () {
     'use strict';
 
-    angular.module('symbols', ['ngMilSymbols']);
+    angular.module('symbols', ['ngMilitarySymbology']);
 
 })();

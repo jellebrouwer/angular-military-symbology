@@ -1,20 +1,21 @@
 (function () {
     'use strict';
 
-    angular.module('ngMilSymbols')
+    angular.module('ngMilitarySymbology')
         .provider('MS', milSymbol);
 
     function milSymbol($windowProvider) {
+        var MS;
 
         return {
             setGlobals: setGlobals,
             $get: function () {
-                return window.MS;
+                return MS;
             }
         }
 
         function setGlobals() {
-            var MS = $windowProvider.$get().MS;
+            MS = $windowProvider.$get().MS;
             MS.setStandard('APP6');
         }
 

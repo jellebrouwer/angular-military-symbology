@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('ngMilSymbols')
+    angular.module('ngMilitarySymbology')
         .controller('SymbolOptionsController', SymbolOptionsController);
 
     function SymbolOptionsController(dimensions) {
