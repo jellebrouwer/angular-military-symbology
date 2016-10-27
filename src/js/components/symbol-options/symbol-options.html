@@ -1,0 +1,21 @@
+<div class="form-group row">
+	<label for="symbol-select" class="col-xs-2 col-form-label">Select</label>
+	<div class="col-xs-10">
+		<select class="form-control" id="select-symbol" ng-model="symbolOptionsCtrl.sidc" ng-options="sidc for sidc in symbolOptionsCtrl.sidcs"></select>
+	</div>
+</div>
+<div class="form-group row">
+	<label for="symbol-sidc" class="col-xs-2 col-form-label">SIDC</label>
+	<div class="col-xs-10">
+		<input class="form-control" type="text" ng-model="symbolOptionsCtrl.sidc" id="symbol-sidc">
+	</div>
+</div>
+<div class="form-group row">
+	<label for="symbol-size" class="col-xs-2 col-form-label">Size</label>
+	<div class="col-xs-10">
+		<input class="form-control" type="text" ng-model="symbolOptionsCtrl.options.size" id="symbol-size">
+	</div>
+</div>
+
+<mil-symbol sidc="{{symbolOptionsCtrl.sidc}}" sym-options="symbolOptionsCtrl.options">
+</mil-symbol>
