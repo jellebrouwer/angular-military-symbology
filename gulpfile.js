@@ -4,6 +4,7 @@ var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var watch = require('gulp-watch');
 var batch = require('gulp-batch');
+var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var del = require('del');
 var vendor = [
@@ -39,13 +40,19 @@ gulp.task('js-app', function () {
         .pipe(gulp.dest(dest));
 });
 
-gulp.task('build', ['clean', 'js-vendor', 'js-app']);
+gulp.task('build', ['clean', 'js-vendor', 'js-app', 'sass']);
 
 // create a task that ensures the `js` task is complete before
 // reloading browsers
-gulp.task('js-watch', ['js-app'], function (done) {
+gulp.task('js-watch', ['js-app', 'sass'], function (done) {
     browserSync.reload();
     done();
+});
+
+gulp.task('sass', function () {
+    return gulp.src('src/sass/symbols.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest(dest));
 });
 
 gulp.task('serve', ['build'], function () {
@@ -56,4 +63,5 @@ gulp.task('serve', ['build'], function () {
 
     gulp.watch(app, ['js-watch']);
     gulp.watch('src/**/*.html', ['js-watch']);
+    gulp.watch('src/**/*.scss', ['js-watch']);
 });
