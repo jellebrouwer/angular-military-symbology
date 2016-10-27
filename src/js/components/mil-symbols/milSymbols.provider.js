@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('ngMilSymbols')
-        .provider('milSymbol', milSymbol);
+        .provider('MS', milSymbol);
 
     function milSymbol($windowProvider) {
 

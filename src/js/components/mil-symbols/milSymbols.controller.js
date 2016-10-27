@@ -4,11 +4,10 @@
     angular.module('ngMilSymbols')
         .controller('MilSymbolController', MilSymbolController);
 
-    function MilSymbolController(milSymbol) {
-        console.log(milSymbol);
+    function MilSymbolController(MS) {
 
     }
 
-    MilSymbolController.$inject = ['milSymbol'];
+    MilSymbolController.$inject = ['MS'];
 
 })();

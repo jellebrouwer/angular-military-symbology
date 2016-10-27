@@ -4,9 +4,9 @@
     angular.module('ngMilSymbols', [])
         .config(configFn);
 
-    function configFn(milSymbolProvider) {
-        milSymbolProvider.setGlobals();
+    function configFn(MSProvider) {
+        MSProvider.setGlobals();
     }
 
-    configFn.$inject = ['milSymbolProvider'];
+    configFn.$inject = ['MSProvider'];
 })();

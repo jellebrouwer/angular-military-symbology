@@ -18,27 +18,31 @@
 
         function link(scope, element, attrs) {
 
-            // console.log(scope.sidc, scope.symOptions);
+            element.addClass('mil-symbol');
 
             scope.$watch('sidc', function (newValue) {
                 if (newValue) {
-                    renderSymbol()
+                    renderSymbol();
                 }
             });
 
             scope.$watch('symOptions', function (newValue) {
                 if (newValue) {
-                    renderSymbol()
+                    // Set defaults;
+                    scope.symOptions.size = scope.symOptions.size || 50;
+                    renderSymbol();
                 }
             }, true);
 
             function renderSymbol() {
                 var currentSVG = angular.element(element).find('svg'),
-                    SVG = new MS.symbol(scope.sidc, scope.symOptions).getMarker().asSVG();
+                    symbol = new MS.symbol(scope.sidc, scope.symOptions).getMarker(),
+                    symbolElement = symbol.asSVG();
+
                 if (currentSVG.length > 0) {
                     currentSVG.remove();
                 }
-                angular.element(element).append(SVG);
+                angular.element(element).append(symbolElement);
             }
 
 
