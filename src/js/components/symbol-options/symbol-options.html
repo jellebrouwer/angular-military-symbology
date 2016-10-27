@@ -42,6 +42,12 @@
 		<input class="form-control" type="number" ng-model="symbolOptionsCtrl.options.direction" id="symbol-direction">
 	</div>
 </div>
+<div class="form-group row">
+	<label for="symbol-location" class="col-xs-2 col-form-label">Location</label>
+	<div class="col-xs-10">
+		<input class="form-control" type="text" ng-model="symbolOptionsCtrl.options.location" id="symbol-location">
+	</div>
+</div>
 
 <mil-symbol sidc="{{symbolOptionsCtrl.sidc}}" sym-options="symbolOptionsCtrl.options">
 </mil-symbol>
