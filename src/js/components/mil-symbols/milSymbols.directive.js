@@ -12,8 +12,7 @@
                 sidc: '@',
                 symOptions: '='
             },
-            link: link,
-            controller: 'MilSymbolController'
+            link: link
         };
 
         function link(scope, element, attrs) {

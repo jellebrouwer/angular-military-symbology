@@ -33,10 +33,7 @@ gulp.task('js-vendor', function () {
 
 gulp.task('js-app', function () {
     return gulp.src(app)
-        .pipe(sourcemaps.init())
-        .pipe(uglify())
-        .pipe(concat('symbols.min.js'))
-        .pipe(sourcemaps.write())
+        .pipe(concat('angular-military-symbology.js'))
         .pipe(gulp.dest(dest));
 });
 

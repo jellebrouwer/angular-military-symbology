@@ -41,7 +41,7 @@
         }
 
         function setDimension(index, dimension) {
-            vm.sidc = vm.sidc.replaceAt(index, dimension);
+            vm.sidc = replaceAt(vm.sidc, index, dimension);
         }
 
         function getDimensionIndex(dimension) {
@@ -60,6 +60,10 @@
             });
 
             return currentSymbolDimensionIndex;
+        }
+
+        function replaceAt(str, index, character) {
+            return str.substr(0, index) + character + str.substr(index + character.length);
         }
 
     }

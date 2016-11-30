@@ -1,9 +1,13 @@
 {
-  "name": "symbols",
+  "name": "angular-military-symbology",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jellebrouwer/angular-military-symbology.git"
+  },
   "author": "Jelle Brouwer",
   "license": "ISC",
   "dependencies": {
