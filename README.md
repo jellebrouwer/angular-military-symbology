@@ -1,7 +1,8 @@
 # Angular Military Symbology
 Angular implementation of MilSymbol, created by Spatial Illusions.
+
 ## Development
-Run `npm install` and `gulp serve`.
+Run `npm install` and `gulp start`.
 
 ## Implementation
 Add ngMilitarySymbology to the dependecies of your app.
