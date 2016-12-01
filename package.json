@@ -1,6 +1,6 @@
 {
   "name": "angular-military-symbology",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "",
   "main": "./build/angular-military-symbology.js",
   "scripts": {
