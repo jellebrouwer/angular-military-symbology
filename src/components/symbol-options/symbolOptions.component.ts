@@ -13,10 +13,11 @@ export class SymbolOptionsComponent {
 
     // Some random examples
     sidcs = [
+        '',
         'SFGPEWRH--MT',
         'SFG-UCI----D'
     ];
-    sidc = this.sidcs[0];
+    sidc = this.sidcs[1];
 
     static $inject = ['affiliations', 'battle'];
     constructor(

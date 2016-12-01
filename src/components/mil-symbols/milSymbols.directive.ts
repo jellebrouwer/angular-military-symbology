@@ -25,6 +25,8 @@ function milSymbolDirective(): ng.IDirective {
             }, function (newValue) {
                 if (newValue) {
                     renderSymbol();
+                } else {
+                    removeElement(getSVGs());
                 }
             });
 
@@ -32,22 +34,31 @@ function milSymbolDirective(): ng.IDirective {
                 return ctrl.symOptions;
             }, function (newValue) {
                 if (newValue) {
-                    // Set defaults;
                     ctrl.symOptions.size = ctrl.symOptions.size || 50;
                     renderSymbol();
                 }
             }, true);
 
             function renderSymbol() {
-                var currentSVG = angular.element(element).find('svg'),
-                    symbol = new MS.symbol(ctrl.sidc, ctrl.symOptions).getMarker(),
-                    symbolElement = symbol.asSVG();
-                console.log(MS);
+                if (ctrl.sidc && ctrl.symOptions) {
+                    let symbol = new MS.symbol(ctrl.sidc, ctrl.symOptions).getMarker(),
+                        symbolElement = symbol.asSVG();
 
-                if (currentSVG.length > 0) {
-                    currentSVG.remove();
+                    if (getSVGs().length > 0) {
+                        removeElement(getSVGs());
+                    }
+
+                    angular.element(element).append(symbolElement);
                 }
-                angular.element(element).append(symbolElement);
+
+            }
+
+            function removeElement(el) {
+                el.remove();
+            }
+
+            function getSVGs() {
+                return angular.element(element).find('svg');
             }
         }
     };
