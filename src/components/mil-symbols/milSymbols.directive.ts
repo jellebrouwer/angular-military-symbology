@@ -20,9 +20,9 @@ function milSymbolDirective(): ng.IDirective {
 
             element.addClass('mil-symbol');
 
-            scope.$watch(function () {
+            scope.$watch(function() {
                 return ctrl.sidc;
-            }, function (newValue) {
+            }, function(newValue) {
                 if (newValue) {
                     renderSymbol();
                 } else {
@@ -30,9 +30,9 @@ function milSymbolDirective(): ng.IDirective {
                 }
             });
 
-            scope.$watch(function () {
+            scope.$watch(function() {
                 return ctrl.symOptions;
-            }, function (newValue) {
+            }, function(newValue) {
                 if (newValue) {
                     ctrl.symOptions.size = ctrl.symOptions.size || 50;
                     renderSymbol();
@@ -40,7 +40,7 @@ function milSymbolDirective(): ng.IDirective {
             }, true);
 
             function renderSymbol() {
-                if (ctrl.sidc && ctrl.symOptions) {
+                if (ctrl.sidc) {
                     let symbol = new MS.symbol(ctrl.sidc, ctrl.symOptions).getMarker(),
                         symbolElement = symbol.asSVG();
 
