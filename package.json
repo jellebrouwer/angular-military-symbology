@@ -2,9 +2,11 @@
   "name": "angular-military-symbology",
   "version": "1.1.0",
   "description": "",
-  "main": "build/angular-military-symbology.js",
+  "main": "./build/angular-military-symbology.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "build": "webpack",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",

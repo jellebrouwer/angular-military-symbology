@@ -1,17 +1,18 @@
 let path = require('path'),
     webpack = require('webpack'),
+    libraryName = 'angular-military-symbology',
     ExtractTextPlugin = require("extract-text-webpack-plugin"),
     CleanWebpackPlugin = require('clean-webpack-plugin'),
     HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: {
-        app: "./src/app.module.ts",
-        vendor: ['angular']
-    },
+    entry: "./src/app.module.ts",
     output: {
         path: __dirname + '/build',
-        filename: "angular-military-symbology.js"
+        filename: libraryName + ".js",
+        library: libraryName,
+        libraryTarget: "umd",
+        umdNamedDefine: true
     },
     module: {
         loaders: [
@@ -47,7 +48,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Angular Military Symbology',
             template: 'src/index.ejs'
-        }),
-        new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"vendor.bundle.js")
+        })
     ]
 };
