@@ -1,10 +1,14 @@
 let path = require('path'),
+    webpack = require('webpack'),
     ExtractTextPlugin = require("extract-text-webpack-plugin"),
-    CleanWebpackPlugin = require('clean-webpack-plugin')
-HtmlWebpackPlugin = require('html-webpack-plugin');
+    CleanWebpackPlugin = require('clean-webpack-plugin'),
+    HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: "./src/app.module.ts",
+    entry: {
+        app: "./src/app.module.ts",
+        vendor: ['angular']
+    },
     output: {
         path: __dirname + '/build',
         filename: "angular-military-symbology.js"
@@ -18,7 +22,6 @@ module.exports = {
             {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract(['css', 'sass?sourceMap'])
-                // loaders: ["style-loader", "css-loader", "sass-loader"]
             },
             {
                 test: /\.(html)$/,
@@ -34,6 +37,10 @@ module.exports = {
         open: true
     },
     plugins: [
+        new CleanWebpackPlugin(['build'], {
+            root: path.resolve(__dirname, './'),
+            verbose: true
+        }),
         new ExtractTextPlugin("[name].css", {
             allChunks: true
         }),
@@ -41,9 +48,6 @@ module.exports = {
             title: 'Angular Military Symbology',
             template: 'src/index.ejs'
         }),
-        new CleanWebpackPlugin(['build'], {
-            root: path.resolve(__dirname, './'),
-            verbose: true
-        })
+        new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"vendor.bundle.js")
     ]
 };
