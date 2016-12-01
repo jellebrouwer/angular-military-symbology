@@ -2,8 +2,10 @@
   "name": "angular-military-symbology",
   "version": "1.0.1",
   "description": "",
-  "main": "index.js",
-  "scripts": {},
+  "main": "build/angular-military-symbology.js",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jellebrouwer/angular-military-symbology.git"
@@ -11,20 +13,23 @@
   "author": "Jelle Brouwer",
   "license": "ISC",
   "dependencies": {
+    "@types/angular": "^1.5.20",
     "angular": "^1.5.8",
     "bootstrap": "^4.0.0-alpha.5",
     "milsymbol": "^0.5.6"
   },
   "devDependencies": {
-    "browser-sync": "^2.17.5",
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-batch": "^1.0.5",
-    "gulp-clean-css": "^2.0.13",
-    "gulp-concat": "^2.6.0",
-    "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^2.2.0",
-    "gulp-uglify": "^2.0.0",
-    "gulp-watch": "^4.3.10"
+    "clean-webpack-plugin": "^0.1.14",
+    "css-loader": "^0.26.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.24.1",
+    "ngtemplate-loader": "^1.3.1",
+    "node-sass": "^3.13.0",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "ts-loader": "^1.2.2",
+    "typescript": "^2.0.10",
+    "webpack": "^1.13.3"
   }
 }
