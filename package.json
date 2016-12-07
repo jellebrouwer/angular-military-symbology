@@ -1,7 +1,12 @@
 {
   "name": "angular-military-symbology",
   "version": "1.1.5",
-  "description": "",
+  "description": "Angular implmentation of MilSymbol.",
+  "keywords": [
+    "symbology",
+    "military",
+    "angular"
+  ],
   "main": "./build/angular-military-symbology.js",
   "scripts": {
     "start": "webpack-dev-server",
