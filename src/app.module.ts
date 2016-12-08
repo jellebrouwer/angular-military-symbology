@@ -1,8 +1,7 @@
-import './sass/main.scss';
 import { module } from 'angular';
 import { MilSymbolProvider } from './components/mil-symbols/milSymbols.provider';
 
-let app = module('symbols', ['ngMilitarySymbology'])
+export let app = module('symbols', ['ngMilitarySymbology']);
 
 app.config(configFn);
 function configFn(milSymbolProvider: MilSymbolProvider) {
@@ -14,4 +13,5 @@ function configFn(milSymbolProvider: MilSymbolProvider) {
 }
 configFn.$inject = ['MSProvider'];
 
-import './components/milSymbols.module';
+import './components/symbol-options/dimensions.constant';
+import './components/symbol-options/symbolOptions.component';

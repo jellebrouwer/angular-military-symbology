@@ -15,6 +15,7 @@ export class MilSymbolProvider implements ng.IServiceProvider {
     public $get() {
         return MS;
     }
+
 }
 
 ngMilitarySymbology.provider('MS', MilSymbolProvider);
