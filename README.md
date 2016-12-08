@@ -20,7 +20,7 @@ Use the directive in your templates.
 </mil-symbol>
 ```
 
-Inject MSProvider in the config function to set globals (http://spatialillusions.com/milsymbol/docs/index.html). MSProvider has a setGlobals method which accepts an Object, where the properties are the function names and the values contains an Array with arguments.
+Inject MSProvider in the config function to set globals ([milsymbol API docs]). MSProvider has a setGlobals method which accepts an Object, where the properties are the function names and the values contains an Array with arguments.
 
 ### Example
 ```
@@ -55,4 +55,6 @@ Inject MSProvider in the config function to set globals (http://spatialillusions
 ```
 
 ## Development
-Clone this repo and run `npm install` and `npm start`.
+Clone this repo and run `npm i` and `npm start`.
+
+[milsymbol API docs]: http://spatialillusions.com/milsymbol/docs/index.html
