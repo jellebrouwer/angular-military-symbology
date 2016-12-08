@@ -18,7 +18,7 @@ module.exports = new WebpackConfig().extend('./config/webpack-base.config.js').m
     },
     externals: {
         "angular": "angular",
-        "milsymbol": "milsymbol"
+        "milsymbol": "MS"
     },
     plugins: [
         new CleanWebpackPlugin(['build'], {
