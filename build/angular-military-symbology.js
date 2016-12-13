@@ -156,14 +156,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function MilSymbolProvider() {
 	    }
 	    MilSymbolProvider.prototype.setGlobals = function (globals) {
-	        if (globals.length > 0) {
+	        if (this.isValid(globals)) {
 	            Object.keys(globals).forEach(function (method) {
 	                MS[method].apply(MS, globals[method]);
 	            });
 	        }
+	        else {
+	            console.warn('MSProvider.setGlobals expects an Object');
+	        }
 	    };
 	    MilSymbolProvider.prototype.$get = function () {
 	        return MS;
+	    };
+	    MilSymbolProvider.prototype.isValid = function (obj) {
+	        return !!obj && Object.keys(obj).length > 0 && obj.constructor === Object;
 	    };
 	    return MilSymbolProvider;
 	}());
