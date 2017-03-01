@@ -1,12 +1,12 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("angular"), require("MS"));
+		module.exports = factory(require("angular"), require("milsymbol"));
 	else if(typeof define === 'function' && define.amd)
-		define("angular-military-symbology", ["angular", "MS"], factory);
+		define("angular-military-symbology", ["angular", "milsymbol"], factory);
 	else if(typeof exports === 'object')
-		exports["angular-military-symbology"] = factory(require("angular"), require("MS"));
+		exports["angular-military-symbology"] = factory(require("angular"), require("milsymbol"));
 	else
-		root["angular-military-symbology"] = factory(root["angular"], root["MS"]);
+		root["angular-military-symbology"] = factory(root["angular"], root["milsymbol"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_4__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache

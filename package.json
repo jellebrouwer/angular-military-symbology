@@ -23,7 +23,7 @@
     "@types/angular": "^1.5.20",
     "angular": "^1.5.8",
     "bootstrap": "^4.0.0-alpha.5",
-    "milsymbol": "git+https://git@github.com/spatialillusions/MilSymbol.git"
+    "milsymbol": "^0.6.0"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.14",
