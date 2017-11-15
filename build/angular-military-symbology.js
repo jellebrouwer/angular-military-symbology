@@ -55,7 +55,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(1);
-	(function webpackMissingModule() { throw new Error("Cannot find module \"./src/sass/main.scss\""); }());
+	module.exports = __webpack_require__(6);
 
 
 /***/ }),
@@ -84,8 +84,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	"use strict";
 	Object.defineProperty(exports, "__esModule", { value: true });
 	var angular = __webpack_require__(2);
+	var milsymbol_1 = __webpack_require__(4);
 	var milSymbols_module_1 = __webpack_require__(1);
-	var MS = __webpack_require__(4);
 	var MilSymbolController = /** @class */ (function () {
 	    function MilSymbolController() {
 	    }
@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        restrict: 'E',
 	        bindToController: {
 	            sidc: '@',
-	            symOptions: '='
+	            symOptions: '<'
 	        },
 	        controller: MilSymbolController,
 	        controllerAs: 'milSymbolCtrl',
@@ -122,7 +122,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }, true);
 	            function renderSymbol() {
 	                if (ctrl.sidc) {
-	                    var symbol = new MS.symbol(ctrl.sidc, ctrl.symOptions).getMarker(), symbolElement = symbol.asSVG();
+	                    var symbol = new milsymbol_1.Symbol(ctrl.sidc, ctrl.symOptions);
+	                    var symbolElement = symbol.asSVG();
 	                    if (getSVGs().length > 0) {
 	                        removeElement(getSVGs());
 	                    }
@@ -153,15 +154,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	Object.defineProperty(exports, "__esModule", { value: true });
+	var ms = __webpack_require__(4);
 	var milSymbols_module_1 = __webpack_require__(1);
-	var MS = __webpack_require__(4);
 	var MilSymbolProvider = /** @class */ (function () {
 	    function MilSymbolProvider() {
 	    }
 	    MilSymbolProvider.prototype.setGlobals = function (globals) {
 	        if (this.isValid(globals)) {
 	            Object.keys(globals).forEach(function (method) {
-	                MS[method].apply(MS, globals[method]);
+	                ms[method].apply(ms, globals[method]);
 	            });
 	        }
 	        else {
@@ -169,7 +170,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    };
 	    MilSymbolProvider.prototype.$get = function () {
-	        return MS;
+	        return ms;
 	    };
 	    MilSymbolProvider.prototype.isValid = function (obj) {
 	        return !!obj && Object.keys(obj).length > 0 && obj.constructor === Object;
@@ -179,6 +180,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.MilSymbolProvider = MilSymbolProvider;
 	milSymbols_module_1.ngMilitarySymbology.provider('MS', MilSymbolProvider);
 
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ])
