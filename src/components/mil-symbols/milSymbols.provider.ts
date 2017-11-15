@@ -1,12 +1,12 @@
+import * as ms from 'milsymbol';
 import { ngMilitarySymbology } from '../milSymbols.module';
-let MS: any = require("milsymbol");
 
 export class MilSymbolProvider implements ng.IServiceProvider {
 
     public setGlobals(globals) {
         if (this.isValid(globals)) {
             Object.keys(globals).forEach(function (method) {
-                MS[method].apply(MS, globals[method]);
+                ms[method].apply(ms, globals[method]);
             });
         } else {
             console.warn('MSProvider.setGlobals expects an Object');
@@ -15,7 +15,7 @@ export class MilSymbolProvider implements ng.IServiceProvider {
     }
 
     public $get() {
-        return MS;
+        return ms;
     }
 
     private isValid(obj) {

@@ -1,7 +1,7 @@
 import { module } from 'angular';
 import { MilSymbolProvider } from './components/mil-symbols/milSymbols.provider';
 
-export let app = module('symbols', ['ngMilitarySymbology']);
+export const app = module('symbols', ['ngMilitarySymbology']);
 
 app.config(configFn);
 function configFn(milSymbolProvider: MilSymbolProvider) {

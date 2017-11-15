@@ -12,12 +12,12 @@ const symbolOptionsTemplateUrl: string = require('./symbol-options.html');
 export class SymbolOptionsComponent {
 
     // Some random examples
-    sidcs = [
+    public sidcs = [
         '',
         'SFGPEWRH--MT',
         'SFG-UCI----D'
     ];
-    sidc = this.sidcs[1];
+    public sidc = this.sidcs[1];
 
     static $inject = ['affiliations', 'battle'];
     constructor(
@@ -26,10 +26,10 @@ export class SymbolOptionsComponent {
     ) { }
 
     // Set current options
-    affiliation = this.affiliations[this.getCurrentSymbolDimensionIndex(this.affiliations, this.getDimensionIndex('affiliation'))];
-    battleDimension = this.battleDimensions[this.getCurrentSymbolDimensionIndex(this.battleDimensions, this.getDimensionIndex('battle'))];
+    public affiliation = this.affiliations[this.getCurrentSymbolDimensionIndex(this.affiliations, this.getDimensionIndex('affiliation'))];
+    public battleDimension = this.battleDimensions[this.getCurrentSymbolDimensionIndex(this.battleDimensions, this.getDimensionIndex('battle'))];
 
-    options = {
+    public options = {
         quantity: 200,
         staffComments: "for reinforcements".toUpperCase(),
         additionalInformation: "added support for JJ".toUpperCase(),
@@ -39,11 +39,11 @@ export class SymbolOptionsComponent {
         location: "0900000.0E570306.0N"
     };
 
-    setAffiliation() {
+    public setAffiliation() {
         this.setDimension(1, this.affiliation.key);
     }
 
-    setbattleDimension() {
+    public setbattleDimension() {
         this.setDimension(2, this.battleDimension.key);
     }
 
@@ -52,13 +52,13 @@ export class SymbolOptionsComponent {
     }
 
     private getDimensionIndex(dimension) {
-        var dimensions = ['war', 'affiliation', 'battle'];
+        const dimensions = ['war', 'affiliation', 'battle'];
         return dimensions.indexOf(dimension);
     }
 
     private getCurrentSymbolDimensionIndex(dimensions, dimensionIndex) {
-        var currentSymbolDimension = this.sidc.charAt(dimensionIndex),
-            currentSymbolDimensionIndex;
+        const currentSymbolDimension = this.sidc.charAt(dimensionIndex);
+        let currentSymbolDimensionIndex;
 
         dimensions.forEach((affiliation, index) => {
             if (currentSymbolDimension === affiliation.key) {

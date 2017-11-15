@@ -1,10 +1,10 @@
 import * as angular from 'angular';
+import { Symbol, SymbolOptions } from 'milsymbol';
 import { ngMilitarySymbology } from '../milSymbols.module';
-let MS: any = require("milsymbol");
 
 class MilSymbolController {
     sidc: string;
-    symOptions: any;
+    symOptions: SymbolOptions;
 }
 
 function milSymbolDirective(): ng.IDirective {
@@ -12,7 +12,7 @@ function milSymbolDirective(): ng.IDirective {
         restrict: 'E',
         bindToController: {
             sidc: '@',
-            symOptions: '='
+            symOptions: '<'
         },
         controller: MilSymbolController,
         controllerAs: 'milSymbolCtrl',
@@ -20,9 +20,9 @@ function milSymbolDirective(): ng.IDirective {
 
             element.addClass('mil-symbol');
 
-            scope.$watch(function() {
+            scope.$watch(function () {
                 return ctrl.sidc;
-            }, function(newValue) {
+            }, function (newValue) {
                 if (newValue) {
                     renderSymbol();
                 } else {
@@ -30,9 +30,9 @@ function milSymbolDirective(): ng.IDirective {
                 }
             });
 
-            scope.$watch(function() {
+            scope.$watch(function () {
                 return ctrl.symOptions;
-            }, function(newValue) {
+            }, function (newValue) {
                 if (newValue) {
                     ctrl.symOptions.size = ctrl.symOptions.size || 50;
                     renderSymbol();
@@ -41,8 +41,8 @@ function milSymbolDirective(): ng.IDirective {
 
             function renderSymbol() {
                 if (ctrl.sidc) {
-                    let symbol = new MS.symbol(ctrl.sidc, ctrl.symOptions).getMarker(),
-                        symbolElement = symbol.asSVG();
+                    const symbol = new Symbol(ctrl.sidc, ctrl.symOptions);
+                    const symbolElement = symbol.asSVG();
 
                     if (getSVGs().length > 0) {
                         removeElement(getSVGs());
