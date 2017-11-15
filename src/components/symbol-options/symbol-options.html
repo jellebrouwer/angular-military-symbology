@@ -1,53 +1,53 @@
+<mil-symbol sidc="{{symbolOptionsCtrl.sidc}}" sym-options="symbolOptionsCtrl.options">
+</mil-symbol>
+
 <div class="form-group row">
-	<label for="symbol-select" class="col-xs-2 col-form-label">Select</label>
-	<div class="col-xs-10">
+	<label for="symbol-select" class="col-2 col-form-label">Select</label>
+	<div class="col-10">
 		<select class="form-control" id="select-symbol" ng-model="symbolOptionsCtrl.sidc" ng-options="sidc for sidc in symbolOptionsCtrl.sidcs"></select>
 	</div>
 </div>
 <div class="form-group row">
-	<label for="symbol-affiliation" class="col-xs-2 col-form-label">Affiliation</label>
-	<div class="col-xs-10">
+	<label for="symbol-affiliation" class="col-2 col-form-label">Affiliation</label>
+	<div class="col-10">
 		<select class="form-control" id="select-affiliation" ng-model="symbolOptionsCtrl.affiliation" ng-options="affiliation as affiliation.name for affiliation in symbolOptionsCtrl.affiliations"
-			ng-change="symbolOptionsCtrl.setAffiliation()"></select>
+		 ng-change="symbolOptionsCtrl.setAffiliation()"></select>
 	</div>
 </div>
 <div class="form-group row">
-	<label for="symbol-battle" class="col-xs-2 col-form-label">Battle</label>
-	<div class="col-xs-10">
+	<label for="symbol-battle" class="col-2 col-form-label">Battle</label>
+	<div class="col-10">
 		<select class="form-control" id="select-battle" ng-model="symbolOptionsCtrl.battleDimension" ng-options="battleDimension as battleDimension.name for battleDimension in symbolOptionsCtrl.battleDimensions"
-			ng-change="symbolOptionsCtrl.setbattleDimension()"></select>
+		 ng-change="symbolOptionsCtrl.setbattleDimension()"></select>
 	</div>
 </div>
 <div class="form-group row">
-	<label for="symbol-sidc" class="col-xs-2 col-form-label">SIDC</label>
-	<div class="col-xs-10">
+	<label for="symbol-sidc" class="col-2 col-form-label">SIDC</label>
+	<div class="col-10">
 		<input class="form-control" type="text" ng-model="symbolOptionsCtrl.sidc" id="symbol-sidc">
 	</div>
 </div>
 <div class="form-group row">
-	<label for="symbol-size" class="col-xs-2 col-form-label">Size</label>
-	<div class="col-xs-10">
+	<label for="symbol-size" class="col-2 col-form-label">Size</label>
+	<div class="col-10">
 		<input class="form-control" type="number" ng-model="symbolOptionsCtrl.options.size" id="symbol-size">
 	</div>
 </div>
 <div class="form-group row">
-	<label for="symbol-quantity" class="col-xs-2 col-form-label">Quantity</label>
-	<div class="col-xs-10">
+	<label for="symbol-quantity" class="col-2 col-form-label">Quantity</label>
+	<div class="col-10">
 		<input class="form-control" type="number" ng-model="symbolOptionsCtrl.options.quantity" id="symbol-quantity">
 	</div>
 </div>
 <div class="form-group row">
-	<label for="symbol-direction" class="col-xs-2 col-form-label">Direction</label>
-	<div class="col-xs-10">
+	<label for="symbol-direction" class="col-2 col-form-label">Direction</label>
+	<div class="col-10">
 		<input class="form-control" type="number" ng-model="symbolOptionsCtrl.options.direction" id="symbol-direction">
 	</div>
 </div>
 <div class="form-group row">
-	<label for="symbol-location" class="col-xs-2 col-form-label">Location</label>
-	<div class="col-xs-10">
+	<label for="symbol-location" class="col-2 col-form-label">Location</label>
+	<div class="col-10">
 		<input class="form-control" type="text" ng-model="symbolOptionsCtrl.options.location" id="symbol-location">
 	</div>
 </div>
-
-<mil-symbol sidc="{{symbolOptionsCtrl.sidc}}" sym-options="symbolOptionsCtrl.options">
-</mil-symbol>

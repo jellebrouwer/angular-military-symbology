@@ -52,17 +52,18 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(1);
-	module.exports = __webpack_require__(6);
+	(function webpackMissingModule() { throw new Error("Cannot find module \"./src/sass/main.scss\""); }());
 
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var angular_1 = __webpack_require__(2);
 	exports.ngMilitarySymbology = angular_1.module('ngMilitarySymbology', []);
 	// Components
@@ -70,21 +71,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	__webpack_require__(5);
 
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
 
-/***/ },
+/***/ }),
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var angular = __webpack_require__(2);
 	var milSymbols_module_1 = __webpack_require__(1);
 	var MS = __webpack_require__(4);
-	var MilSymbolController = (function () {
+	var MilSymbolController = /** @class */ (function () {
 	    function MilSymbolController() {
 	    }
 	    return MilSymbolController;
@@ -139,20 +141,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	milSymbols_module_1.ngMilitarySymbology.directive('milSymbol', milSymbolDirective);
 
 
-/***/ },
+/***/ }),
 /* 4 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = __WEBPACK_EXTERNAL_MODULE_4__;
 
-/***/ },
+/***/ }),
 /* 5 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
+	Object.defineProperty(exports, "__esModule", { value: true });
 	var milSymbols_module_1 = __webpack_require__(1);
 	var MS = __webpack_require__(4);
-	var MilSymbolProvider = (function () {
+	var MilSymbolProvider = /** @class */ (function () {
 	    function MilSymbolProvider() {
 	    }
 	    MilSymbolProvider.prototype.setGlobals = function (globals) {
@@ -177,13 +180,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	milSymbols_module_1.ngMilitarySymbology.provider('MS', MilSymbolProvider);
 
 
-/***/ },
-/* 6 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ }
+/***/ })
 /******/ ])
 });
 ;

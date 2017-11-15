@@ -2,7 +2,7 @@ import { Component } from '../decorators';
 import { ngMilitarySymbology } from '../milSymbols.module';
 import { Affiliations, Battle } from './dimensions.constant';
 
-let symbolOptionsTemplateUrl: string = require('./symbol-options.html');
+const symbolOptionsTemplateUrl: string = require('./symbol-options.html');
 
 @Component({
     controllerAs: 'symbolOptionsCtrl',
@@ -75,4 +75,4 @@ export class SymbolOptionsComponent {
 
 }
 
-ngMilitarySymbology.component('symbolOptions', SymbolOptionsComponent);
+ngMilitarySymbology.component('symbolOptions', SymbolOptionsComponent as ng.IComponentOptions);

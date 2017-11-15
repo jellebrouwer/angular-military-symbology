@@ -10,6 +10,7 @@ module.exports = new WebpackConfig().extend('./config/webpack-base.config.js').m
     debug: true,
     devServer: {
         contentBase: "build",
-        open: true
+        open: true,
+        watch: true
     }
 });
