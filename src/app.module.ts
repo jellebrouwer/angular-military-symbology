@@ -1,14 +1,14 @@
-import { module } from 'angular';
+import * as angular from 'angular';
 import { MilSymbolProvider } from './components/mil-symbols/milSymbols.provider';
 
-export const app = module('symbols', ['ngMilitarySymbology']);
+export const app = angular.module('symbols', ['ngMilitarySymbology']);
 
 app.config(configFn);
 function configFn(milSymbolProvider: MilSymbolProvider) {
 
-    milSymbolProvider.setGlobals({
-        setStandard: ['APP6']
-    });
+  milSymbolProvider.setGlobals({
+    setStandard: ['APP6']
+  });
 
 }
 configFn.$inject = ['MSProvider'];

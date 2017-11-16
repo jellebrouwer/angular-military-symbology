@@ -1,6 +1,6 @@
-import { module } from 'angular';
+import * as angular from 'angular';
 
-export const ngMilitarySymbology = module('ngMilitarySymbology', []);
+export const ngMilitarySymbology = angular.module('ngMilitarySymbology', []);
 
 // Components
 import './mil-symbols/milSymbols.directive';
