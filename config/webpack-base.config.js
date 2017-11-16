@@ -13,7 +13,7 @@ const extractSass = new ExtractTextPlugin({
 module.exports = new WebpackConfig().merge({
   output: {
     path: path.resolve(__dirname, '../build'),
-    filename: '[name].js'
+    filename: package.name + '.js'
   },
   module: {
     rules: [
