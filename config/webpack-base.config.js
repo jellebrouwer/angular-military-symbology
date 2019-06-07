@@ -1,14 +1,8 @@
 const path = require('path');
 const package = require('../package.json');
-const webpack = require('webpack');
 const WebpackConfig = require('webpack-config').Config;
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-const extractSass = new ExtractTextPlugin({
-  filename: "[name].css",
-  disable: process.env.NODE_ENV === "development"
-});
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = new WebpackConfig().merge({
   output: {
@@ -24,19 +18,17 @@ module.exports = new WebpackConfig().merge({
         }
       },
       {
-        test: /\.scss$/,
-        use: extractSass.extract({
-          use: [
-            {
-              loader: "css-loader"
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === 'development',
             },
-            {
-              loader: "sass-loader"
-            }
-          ],
-          // use style-loader in development
-          fallback: "style-loader"
-        })
+          },
+          'css-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /[^index]\.html$/,
@@ -48,19 +40,16 @@ module.exports = new WebpackConfig().merge({
     ]
   },
   resolve: {
-    // enforceExtension: true,
     extensions: ['.js', '.ts']
   },
   plugins: [
-    extractSass,
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
     new HtmlWebpackPlugin({
       title: 'Angular Military Symbology',
       template: 'src/index.html'
     }),
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: "vendors",
-    //   chunks: ["app"],
-    //   minChunks: Infinity
-    // })
   ]
 });

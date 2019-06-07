@@ -5,6 +5,7 @@ const package = require('../package.json');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = new WebpackConfig().extend('./config/webpack-base.config.js').merge({
+   mode: 'production',
     entry: {
         app: [
             "./src/components/milSymbols.module.ts",
